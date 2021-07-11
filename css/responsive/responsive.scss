@@ -1,0 +1,454 @@
+$main: #0561a6;
+$pri: #1fc157;
+$sec: #095b55;
+$btn: #13b7ab;
+// $bgColor: #f3f3f3;
+$bgColor: rgba(#eaf5ff, 1);
+$light: #ffffff;
+$dark: #000000;
+
+@media only screen and (max-width: 990px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .banner-title {
+    font-size: 30px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light;
+    padding: 0 25px;
+
+    .nav {
+      position: fixed;
+      left: -200px;
+      transition: 0.4s;
+      z-index: -1;
+      pointer-events: none;
+
+      &.side-nav {
+        display: block;
+        position: fixed;
+        left: 10px;
+        top: 70px;
+        z-index: 21;
+        max-width: 370px;
+        width: 100%;
+        pointer-events: auto;
+
+        ul {
+          flex-direction: column;
+          justify-content: flex-start;
+          padding: 0 2rem;
+          width: 100%;
+          a {
+            margin-right: 2rem;
+            line-height: 5rem;
+            font-weight: 500;
+            font-size: 18px;
+            border-bottom: 1px solid rgba($light, 0.4);
+            width: 100%;
+
+            li {
+              color: $light;
+            }
+
+            &:hover {
+              background-color: rgba($light, 0.2);
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      height: 60px;
+      justify-content: flex-start;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .side-nav-btn {
+      display: block;
+      justify-content: flex-end;
+      position: relative;
+      height: 20px;
+      width: 30px;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 100%;
+        background-color: $main;
+        transition: 0.4s;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 100%;
+        background-color: $main;
+        transition: 0.4s;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 100%;
+        background-color: $main;
+        transition: 0.4s;
+      }
+
+      &.nav-clicked {
+        &:after {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          width: 100%;
+        }
+
+        .nav-btn {
+          width: 0;
+        }
+
+        &:before {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .what-we-do {
+    .section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .how-we-work {
+    .process {
+      padding: 10px;
+
+      h2 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .why-deep-mind {
+    .list {
+      .item {
+        grid-template-columns: 1fr 1fr;
+
+        &:nth-child(2) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        &:nth-child(4) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .image {
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .how-it-begain {
+    .list {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .blog {
+    .wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .teams {
+    .list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: 828px) {
+  .how-it-begain {
+    .list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .how-we-work {
+    margin: 4rem 0;
+    position: relative;
+
+    .inner {
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .process {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 4rem;
+      margin-bottom: 2rem;
+
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 20px;
+        color: $dark;
+        text-align: left;
+        font-weight: 600;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .icon {
+        justify-content: flex-start;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 1rem;
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+
+    .line {
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, #1ac7be, #231ac7, #1a4dc7, #c7be1a);
+
+      .dot {
+        left: 50%;
+        top: 0%;
+        transform: translateX(-50%) rotate(180deg);
+        background-color: $main;
+        animation: move 8s ease-in-out infinite;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+
+      @keyframes move {
+        0% {
+          top: 0;
+          background-color: #1ac7be;
+        }
+
+        35% {
+          background-color: #231ac7;
+        }
+
+        60% {
+          background-color: #1a4dc7;
+        }
+
+        100% {
+          top: 100%;
+          background-color: #c7be1a;
+        }
+      }
+    }
+  }
+
+  .what-we-do {
+    .section {
+      grid-template-columns: 1fr;
+
+      .list {
+        justify-content: flex-start;
+        grid-area: 2;
+      }
+
+      .images {
+        grid-area: 1;
+        flex-wrap: wrap;
+        height: 400px;
+      }
+    }
+  }
+
+  .why-deep-mind {
+    .list {
+      padding: 0 2rem;
+      .item {
+        grid-template-columns: 1fr;
+
+        &:nth-child(2) {
+          grid-template-columns: 1fr;
+        }
+
+        &:nth-child(4) {
+          grid-template-columns: 1fr;
+        }
+
+        .image {
+          grid-area: 1;
+          height: 350px;
+        }
+
+        .info {
+          grid-area: 2;
+        }
+      }
+    }
+  }
+
+  .how-it-begain {
+    .title-sec {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .about-title {
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .blog {
+    .wrapper {
+      grid-template-columns: 1fr;
+
+      .recent-blog {
+        .blog-title {
+          margin-top: 2rem;
+        }
+        .list {
+          .item {
+            .blog-image {
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 727px) {
+  .what-we-do {
+    .list {
+      grid-template-columns: 1fr;
+
+      .card {
+        &:nth-child(3) {
+          grid-column: 1;
+        }
+
+        .image {
+          height: 280px;
+        }
+      }
+    }
+  }
+
+  .teams {
+    .list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .banner {
+    &.home {
+      height: 70vh;
+      position: relative;
+
+      .content {
+        max-width: 1000px;
+        width: 100%;
+        padding: 0 25px;
+      }
+    }
+  }
+
+  .why-deep-mind {
+    .list {
+      padding: 0;
+    }
+  }
+
+  .footer {
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .teams {
+    .desc {
+      padding: 0;
+    }
+    .list {
+      grid-template-columns: 1fr;
+
+      .image {
+        height: 350px;
+      }
+    }
+  }
+
+  .how-it-begain {
+    .list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-form {
+    .form {
+      .center {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .mobile-banner {
+    .swiper-slide {
+      height: 600px;
+
+      .content {
+        .label {
+          margin-bottom: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
